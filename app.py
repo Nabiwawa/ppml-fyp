@@ -256,7 +256,7 @@ def estimate_epsilon(batch_size, train_ds_len, epochs, train_loader_dp, sigma, d
         steps = epochs * len(train_loader_dp)
         orders = np.linspace(1.25, 64.0, 100)
         rdp = rdp_analysis.compute_rdp(q=sample_rate, noise_multiplier=float(sigma), steps=steps, orders=orders)
-        eps, _, best_order = rdp_analysis.get_privacy_spent(orders, rdp, target_delta=delta)
+        eps, best_order = rdp_analysis.get_privacy_spent(orders=orders, rdp=rdp, delta=delta)
         return eps, best_order
     except Exception as e:
         return None, str(e)
@@ -359,3 +359,4 @@ st.caption(
     "Notes: (1) CSV last column must be the label (binary). If labels aren’t 0/1, they’re auto-mapped to 0/1. "
     "(2) DP uses gradient clipping and Gaussian noise, so some accuracy drop is expected — the privacy–utility trade-off."
 )
+
