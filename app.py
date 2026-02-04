@@ -355,8 +355,4 @@ with tab2:
     else:
         st.warning(f"Could not estimate ε: {best_order}")
 
-st.caption(
-    "Notes: (1) CSV last column must be the label (binary). If labels aren’t 0/1, they’re auto-mapped to 0/1. "
-    "(2) DP uses gradient clipping and Gaussian noise, so some accuracy drop is expected — the privacy–utility trade-off."
-)
 
