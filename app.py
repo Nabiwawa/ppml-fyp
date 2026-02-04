@@ -27,7 +27,7 @@ from opacus.accountants.analysis import rdp as rdp_analysis
 st.set_page_config(page_title="PPML Demo", layout="wide")
 st.title("Privacy-Preserving ML Demo")
 st.write(
-    "Upload a CSV or use a built-in synthetic dataset, choose a technique, "
+    "Upload a CSV or use the built-in synthetic dataset, choose a technique, "
     "then train and visualise results. Compare **Non-Private** vs **Differential Privacy**."
 )
 
@@ -354,5 +354,6 @@ with tab2:
         st.info(f"Approx (ε, δ): ε ≈ {eps:.2f} at δ = {delta_str} (best order ≈ {best_order:.2f})")
     else:
         st.warning(f"Could not estimate ε: {best_order}")
+
 
 
